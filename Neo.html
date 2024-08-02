@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Vehículos</title>
+    <link rel="stylesheet" href="Neo.CSS"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+    <!-- Menú Desplegable -->
+    <div class="menu">
+        <button class="menu-button">Menu</button> <!-- Botón principal del menú -->
+        <div class="submenu">
+            <button class="submenu-button">Historial</button> <!-- Botón del submenú -->
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Registro de Vehículos</h1>
+        <form id="vehicleForm">
+            <!-- Campo para la fecha y hora -->
+            <label for="fecha">Fecha y Hora:</label>
+            <input type="datetime-local" id="fecha" name="fecha" required>
+
+            <!-- Campo para la marca del vehículo -->
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
+
+            <!-- Campo para el modelo del vehículo -->
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" required>
+
+            <!-- Campo para la placa del vehículo -->
+            <label for="placa">Placa:</label>
+            <input type="text" id="placa" name="placa" required>
+
+            <!-- Campo para el color del vehículo -->
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" required>
+
+            <!-- Campo para el nombre del propietario -->
+            <label for="propietario">Nombre del Propietario:</label>
+            <input type="text" id="propietario" name="propietario" required>
+
+            <!-- Campo para subir una foto del vehículo -->
+            <label for="foto">Foto del Vehículo:</label>
+            <input type="file" id="foto" name="foto" accept="image/*" required>
+
+            <!-- Campo para observaciones -->
+            <label for="observaciones">Observaciones:</label>
+            <textarea id="observaciones" name="observaciones" rows="4" cols="50"></textarea>
+
+            <!-- Botones para seleccionar el garaje -->
+            <div id="garage-selection">
+                <label>Seleccionar Garaje:</label>
+                <label for="garage1"><input type="radio" id="garage1" name="garage" value="P1" required> P1</label>
+                <label for="garage2"><input type="radio" id="garage2" name="garage" value="P2"> P2</label>
+            </div>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit">Registrar Vehículo</button>
+
+            <!-- Botones para seleccionar el tipo de vehículo -->
+            <div id="vehicle-selection">
+                <button type="button" onclick="selectVehicle('car')">Auto</button>
+                <button type="button" onclick="selectVehicle('van')">Camioneta</button>
+            </div>
+        </form>
+
+        <!-- Contenedor para el canvas de anotaciones -->
+        <div id="canvas-container">
+            <h2>Anotar partes averiadas</h2>
+            <label for="colors">Color de Anotación:</label>
+            <input type="color" id="colorPicker" value="#ff0000">
+
+            <canvas id="vehicleCanvas" width="500" height="300"></canvas>
+            <button id="clearCanvas">Limpiar</button>
+        </div>
+    </div>
+
+     <!-- Nueva sección para el historial -->
+     <div id="history-container">
+        <h2>Historial de Vehículos Registrados</h2>
+        <table id="historyTable">
+            <thead>
+                <tr>
+                    <th>Fecha y Hora</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Placa</th>
+                    <th>Color</th>
+                    <th>Propietario</th>
+                    <th>Observaciones</th>
+                    <th>Garaje</th>
+                    <th>Imagen</th>
+                    <th>Partes Averiadas</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los registros del historial se insertarán aquí -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Contenedor Modal para ver la imagen en pantalla completa -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="fullImage">
+</div>
+    <script src="Neo.JS"></script> <!-- Enlace al archivo JavaScript -->
+</body>
+</html>

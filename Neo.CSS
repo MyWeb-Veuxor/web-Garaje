@@ -1,0 +1,224 @@
+/* Estilos generales para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el menú */
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón principal del menú */
+.menu-button {
+    background-color: #007BFF;
+    color: rgb(241, 232, 232);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Submenú desplegable */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #15b3d6;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Mostrar submenú cuando se añade la clase 'show' */
+.submenu.show {
+    display: block;
+}
+
+/* Botones del submenú */
+.submenu-button {
+    color: rgb(1, 1, 1);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: #cccccc;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+/* Estilo al pasar el cursor sobre el botón principal del menú */
+.menu-button:hover .submenu { 
+    display: block; 
+}
+
+/* Estilo al pasar el cursor sobre los botones del submenú */
+.submenu-button:hover { 
+    background-color: #e9b182; 
+}
+
+/* Contenedor principal del formulario y canvas */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos del formulario y canvas */
+h1, h2 {
+    text-align: center;
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Margen superior para las etiquetas */
+label {
+    margin-top: 10px;
+}
+
+/* Estilos para los campos de entrada de texto, fecha y archivo */
+input[type="text"],
+input[type="datetime-local"],
+input[type="file"],
+textarea {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+/* Estilos para los botones */
+button {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo al pasar el cursor sobre los botones */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Contenedor del canvas */
+#canvas-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Estilo del canvas */
+canvas {
+    border: 1px solid #000;
+    cursor: crosshair;
+}
+
+/* Botón para limpiar el canvas */
+#clearCanvas {
+    margin-top: 10px;
+}
+
+/* Estilos para los botones de selección de tipo de vehículo */
+#vehicle-selection button {
+    margin-right: 10px;
+}
+
+/* Estilos para la selección del garaje */
+#garage-selection {
+    margin: 10px 0;
+}
+
+/* Estilos para las etiquetas de los botones de selección de garaje */
+#garage-selection label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Estilos para la tabla del historial */
+#historyTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#historyTable th, #historyTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#historyTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#historyTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#historyTable tr:hover {
+    background-color: #ddd;
+}
+
+/* Estilos para las imágenes en la tabla */
+#historyTable img {
+    width: 100px;
+    height: auto;
+}
+
+/* Estilos para los botones de acción */
+#historyTable button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#historyTable button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el modal de la imagen en pantalla completa */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
